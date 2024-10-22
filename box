@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+struct Box 
+{
+    int width;
+    int height;
+    char color[20];
+};
+
+void displayBox(struct Box b) 
+{
+    printf("Box Details:\n");
+    printf("Width: %d\n", b.width);
+    printf("Height: %d\n", b.height);
+    printf("Color: %s\n", b.color);
+}
+
+int main() 
+{
+    struct Box myBox;
+    myBox.width = 10;
+    myBox.height = 5;
+    snprintf(myBox.color, sizeof(myBox.color), "Red");
+
+    displayBox(myBox);
+
+    return 0;
+}
